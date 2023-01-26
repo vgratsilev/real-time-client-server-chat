@@ -18,7 +18,7 @@
 
 .form {
   padding: 40px;
-  width: 400px;
+  width: 500px;
   border-radius: 8px;
   border: 2px solid teal;
   display: flex;
@@ -30,6 +30,7 @@
   width: 100%;
   padding: 5px 10px;
   border: teal 1px solid;
+  height: 37px;
 }
 
 .form button {
@@ -48,14 +49,36 @@
 }
 
 .connection_message {
-  width: 400px;
+  width: 500px;
   text-align: center;
 }
 
 .message {
-  width: 400px;
+  width: 500px;
   border: 2px solid teal;
   border-radius: 8px;
   padding: 15px;
   margin-top: 15px;
+}
+
+.usernameContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.usernameContainer input {
+  margin-right: 10px;
+  height: 37px;
+}
+
+.usernameContainer button {
+  margin: 0;
+  padding: 10px 15px;
+}
+
+input:disabled,
+button:disabled {
+  opacity: 0.5;
 }

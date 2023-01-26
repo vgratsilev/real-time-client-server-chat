@@ -13,7 +13,12 @@ app.use(express.json());
 
 app.get('/get-messages', (request, response) => {
     emitter.once('newMessage', (message) => {
-        response.json(message);
+        const time = new Date().toLocaleTimeString('en-GB'); // 24 hours time format
+        const data = {
+            time,
+            ...message,
+        };
+        response.json(data);
     });
 });
 
