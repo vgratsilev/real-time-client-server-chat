@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 
-const LongPolling = () => {
+const EventSourcing = () => {
     const [messages, setMessages] = useState([]);
     const [value, setValue] = useState('');
     const [username, setUsername] = useState('Anon');
@@ -12,15 +12,11 @@ const LongPolling = () => {
     }, []);
 
     const subscribe = async () => {
-        try {
-            const { data } = await axios.get('http://localhost:5000/get-messages');
-            setMessages((prev) => [data, ...prev]);
-            await subscribe();
-        } catch (e) {
-            setTimeout(() => {
-                subscribe();
-            }, 500);
-        }
+        const eventSource = new EventSource(`http://localhost:5000/connect`);
+        eventSource.onmessage = function (event) {
+            const message = JSON.parse(event.data);
+            setMessages((prev) => [message, ...prev]);
+        };
     };
 
     const changeUsername = () => {
@@ -45,7 +41,7 @@ const LongPolling = () => {
 
     return (
         <div className={'center'}>
-            <h1>Long polling</h1>
+            <h1>Event sourcing</h1>
             <div>
                 <div className={'form'}>
                     <label htmlFor={'usernameInput'}>Username:</label>
@@ -84,4 +80,4 @@ const LongPolling = () => {
     );
 };
 
-export default LongPolling;
+export default EventSourcing;
