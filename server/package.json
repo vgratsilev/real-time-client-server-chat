@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:lp": "nodemon longpolling.js",
-    "start:es": "nodemon eventsource.js",
-    "start:ws": "nodemon websocket.js"
+    "dev:lp": "nodemon longpolling.js",
+    "dev:es": "nodemon eventsource.js",
+    "dev:ws": "nodemon websocket.js"
   },
   "keywords": [],
   "author": "vgratsilev",

@@ -1,6 +1,6 @@
 ### Server app
 
 #### Scripts:
-* `npm run start:lp` to start server with long polling.
-* `npm run start:es` to start server with event sourcing.
-* `npm run start:ws` to start server with websockets.
+* `npm run dev:lp` to start server with long polling.
+* `npm run dev:es` to start server with event sourcing.
+* `npm run dev:ws` to start server with websockets.

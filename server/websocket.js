@@ -2,9 +2,9 @@ const ws = require('ws');
 
 const wss = new ws.WebSocketServer(
     {
-        port: 5000,
+        port: 5005,
     },
-    () => console.log(`Server started on port 5000`),
+    () => console.log(`Server started on port 5005`),
 );
 
 wss.on('connection', function connection(ws) {

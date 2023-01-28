@@ -11,6 +11,6 @@
 1. Uncomment one of components in index.js
 2. Execute `npm run start` in client folder.
 3. Execute one of scripts in server folder:
-   * `npm run start:lp` to start server with long polling.
-   * `npm run start:es` to start server with event sourcing.
-   * `npm run start:ws` to start server with websockets.
+   * `npm run dev:lp` to start server with long polling.
+   * `npm run dev:es` to start server with event sourcing.
+   * `npm run dev:ws` to start server with websockets.

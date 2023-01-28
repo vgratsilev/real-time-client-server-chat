@@ -9,7 +9,7 @@ const WebSocketComponent = () => {
     const [isConnected, setIsConnected] = useState(false);
 
     const connect = () => {
-        socket.current = new WebSocket('ws://localhost:5000');
+        socket.current = new WebSocket('ws://localhost:5005');
 
         socket.current.onopen = () => {
             console.log('Connection established');
